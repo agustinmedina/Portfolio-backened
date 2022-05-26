@@ -2,8 +2,8 @@ package com.example.port4clondelgentejava11.service;
 import java.util.List;
 import javax.transaction.Transactional;
 
-import com.example.port4clondelgentejava11.model.Usuario;
-import com.example.port4clondelgentejava11.repository.UsuarioRepo;
+import com.example.port4clondelgentejava11.model.Info;
+import com.example.port4clondelgentejava11.repository.InfoRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,21 +14,21 @@ import org.springframework.stereotype.Service;
 
 public class UsuarioService {
 
-    private final UsuarioRepo usuarioRepo;
+    private final InfoRepo usuarioRepo;
 
     @Autowired
-    public UsuarioService(UsuarioRepo usuarioRepo) {
+    public UsuarioService(InfoRepo usuarioRepo) {
         this.usuarioRepo = usuarioRepo;
     }
           
-    public Usuario addUser (Usuario usuario){
+    public Info addUser (Info usuario){
         //return usuarioRepo.save(usuario);
         return usuarioRepo.save(usuario);
     }
-    public List<Usuario> buscarUsuario (){
+    public List<Info> buscarUsuario (){
       return usuarioRepo.findAll();
     }
-    public Usuario editarUsuario(Usuario usuario){
+    public Info editarUsuario(Info usuario){
       return usuarioRepo.save(usuario);
     }
     
@@ -36,7 +36,7 @@ public class UsuarioService {
       usuarioRepo.deleteById(id);
     }
 
-    public Usuario buscarUsuarioPorId(Long id){
+    public Info buscarUsuarioPorId(Long id){
         return usuarioRepo.findById(id).orElse(null);
         //return usuarioRepo.findAll();
       }
