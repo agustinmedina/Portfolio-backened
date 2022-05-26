@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Usuario implements Serializable{
+public class Info implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,10 +19,10 @@ public class Usuario implements Serializable{
     private String descripcion;
     private String fotoPerfil;
 
-    public Usuario() {
+    public Info() {
     }
 
-    public Usuario(Long id, String nombre, String apellido, String titulo, String descripcion, String fotoPerfil) {
+    public Info(Long id, String nombre, String apellido, String titulo, String descripcion, String fotoPerfil) {
         this.id = id;
         this.setNombre(nombre);
         this.setApellido(apellido);
