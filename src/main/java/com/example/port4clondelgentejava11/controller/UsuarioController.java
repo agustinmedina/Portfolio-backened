@@ -1,6 +1,6 @@
 package com.example.port4clondelgentejava11.controller;
 
-import com.example.port4clondelgentejava11.model.Usuario;
+import com.example.port4clondelgentejava11.model.Info;
 import com.example.port4clondelgentejava11.service.UsuarioService;
 
 import org.springframework.http.HttpStatus;
@@ -27,14 +27,14 @@ public class UsuarioController {
     }    
     
     @GetMapping ("/id/{id}")
-    public ResponseEntity<Usuario> obtenerUsuario(@PathVariable("id") Long id){
-    Usuario usuario = usuarioService.buscarUsuarioPorId(id);
+    public ResponseEntity<Info> obtenerUsuario(@PathVariable("id") Long id){
+    Info usuario = usuarioService.buscarUsuarioPorId(id);
     return new ResponseEntity <>(usuario, HttpStatus.OK);
     }
     
     @PutMapping("/update")
-    public ResponseEntity<Usuario> editarUsuario(@RequestBody Usuario usuario){
-        Usuario updateUsuario = usuarioService.editarUsuario(usuario);
+    public ResponseEntity<Info> editarUsuario(@RequestBody Info usuario){
+        Info updateUsuario = usuarioService.editarUsuario(usuario);
         return new ResponseEntity<>(updateUsuario,HttpStatus.OK);
         //usuario updateUsuario = usuarioService.editarUsuario(usuario);
        // return new ResponseEntity<>(updateUsuario,HttpStatus.OK);
